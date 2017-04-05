@@ -85,6 +85,12 @@ extension ProjectsTVC {
         cell.detailTextLabel?.text = dateFormatter.string(from: object.creationDate as! Date)
         return cell
     }
+	
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectSectionCellSID") else {
+			fatalError("No cell")
+		}
+	}
 }
 
 extension DateFormatter {
